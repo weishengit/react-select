@@ -1,0 +1,88 @@
+.container {
+  --black: #777;
+  --blacker: #333;
+
+  position: relative; /* To allow the list to be positioned absolutely in the bottom */
+  width: 20em; /* 'em' scales by font size */
+  min-height: 1.5em;
+  border: 0.05em solid var(--black);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  outline: none;
+}
+
+.container:focus {
+  /* Add 'tabIndex' to the div to make it focusable */
+  border-color: hsl(200, 100%, 50%);
+}
+
+.value {
+  flex-grow: 1;
+}
+
+.clear-btn {
+  background: none;
+  color: var(--black);
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.clear-btn:focus,
+.clear-btn:hover {
+  color: var(--blacker);
+}
+
+.divider {
+  background: var(--black);
+  align-self: stretch;
+  width: 0.05em;
+}
+
+.caret {
+  translate: 0 25%;
+  border: 0.25em solid transparent;
+  border-top-color: var(--black);
+}
+
+.options {
+  display: none;
+
+  position: absolute;
+
+  width: 100%;
+  left: 0;
+  top: calc(100% + 0.25em);
+  margin: 0;
+  padding: 0;
+  max-height: 15em;
+
+  overflow-y: auto;
+  list-style: none;
+  border: 0.05em solid var(--black);
+  border-radius: 0.25em;
+  z-index: 100;
+}
+
+.options.show {
+  display: block;
+}
+
+.option {
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.option.selected {
+  background-color: hsl(200, 100%, 70%);
+}
+
+.option.highlighted {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+}
